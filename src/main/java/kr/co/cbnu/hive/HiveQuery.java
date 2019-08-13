@@ -21,9 +21,10 @@ public class HiveQuery {
             e.printStackTrace();
             System.exit(1);
         }
-        Connection con = DriverManager.getConnection("jdbc:hive2://192.168.131.145:10000/weather_db", "hadoop", "123456");
+//        Connection con = DriverManager.getConnection("jdbc:hive2://192.168.131.145:10000/weather_db", "hadoop", "123456");
+        Connection con = DriverManager.getConnection("jdbc:hive2://133.186.162.214:10000/nak_test", "", "");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM weather LIMIT 1000");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM tb_test");
         while (rs.next()) {
             System.out.println(rs.getString(1) + " " + rs.getString(2));
         }
